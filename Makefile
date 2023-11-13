@@ -6,7 +6,7 @@
 #    By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 16:25:01 by zchtaibi          #+#    #+#              #
-#    Updated: 2023/11/12 17:25:22 by zchtaibi         ###   ########.fr        #
+#    Updated: 2023/11/13 22:20:12 by zchtaibi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ OBJS	= $(SRCS:.c=.o)
 B_SRCS	=	ft_lstlast.c ft_lstadd_back.c\
 			ft_lstadd_front.c ft_lstnew.c\
 			ft_lstsize.c ft_lstdelone.c\
-			ft_lstclear.c\
+			ft_lstclear.c ft_lstiter.c\
 			 
 
 B_OBJS	= $(B_SRCS:.c=.o)
@@ -60,7 +60,7 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-bonus: $(NAME) $(B_OBJS)
+bonus: $(B_OBJS) $(DEPS)
 	$(ARCHIVE) $(NAME) $(B_OBJS)
 
 rebonus: fclean bonus

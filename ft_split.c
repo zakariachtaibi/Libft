@@ -6,66 +6,57 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:54:26 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/07 17:09:02 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:23:33 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(char const *s, char c)
+static size_t	word_count(const char *str, char c)
 {
 	size_t	count;
+	size_t	i;
 
 	count = 0;
-	while (*s)
+	i = 0;
+	while (str[i])
 	{
-		if (*s == c)
+		if ((str[i] != c )&& ((str[i + 1] == c) || str[i + 1] == '\0'))
 			count++;
-		s++;
+		i++;
 	}
 	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char **split;
-	size_t count_w;
-	size_t i;
-	size_t j;
-	const char *start;
-	size_t len;
+	size_t	i;
+	size_t	j;
+	char	**split;
+	size_t	wordlen;
 
 	i = 0;
-	if (!s)
+	j = 0;
+	split = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (split == NULL)
 		return (NULL);
-	count_w = count_words(s, c);
-	split = (char **)malloc(sizeof(char) * (count_w + 1));
-	if (!split)
-		return (NULL);
-	while (*s)
+	while (s[i])
 	{
-		if (*s != c)
+		if (s[i] == c)
 		{
-			start = s;
-			while (*s && *s != c)
-				s++;
-			len = s - start;
-			split[i] = strdup(start);
-			j = 0;
-			if (!split[i])
-			{
-				while (j < i)
-				{
-					free(split[j]);
-					j++;
-				}
-				free(split);
-				return (NULL);
-			}
+			i++;
 		}
 		else
-			s++;
+		{
+			wordlen = 0;
+			while (s[i + wordlen] && s[i + wordlen] != c)
+				wordlen++;
+			split[j] = malloc(wordlen + 1);
+			ft_strlcpy(split[j], s + i, wordlen + 1);
+			i += wordlen;
+			j++;
+		}
 	}
-	split[i] = NULL;
+	split[j] = NULL;
 	return (split);
 }

@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:43:32 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/11 14:25:39 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:07:15 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 
 static int	get_digits(int n)
 {
-	int	i;
+	int	count;
 
-	i = 1;
-	while (n /= 10)
-		i++;
-	return (i);
+	count = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		n = -n;
+	while (n != 0)
+	{
+		n = n / 10;
+		++count;
+	}
+	return (count);
 }
 
 char	*ft_itoa(int n)
@@ -35,7 +42,8 @@ char	*ft_itoa(int n)
 		num *= -1;
 		digits++;
 	}
-	if (!(str_num = (char *)malloc(sizeof(char) * (digits + 1))))
+	str_num = (char *)malloc(sizeof(char) * (digits + 1));
+	if (!str_num)
 		return (NULL);
 	*(str_num + digits) = 0;
 	while (digits--)
