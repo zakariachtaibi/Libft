@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:43:32 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/07 21:49:28 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/11 14:25:39 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	get_digits(int n)
 char	*ft_itoa(int n)
 {
 	char		*str_num;
-	int		digits;
+	int			digits;
 	long int	num;
 
 	num = n;

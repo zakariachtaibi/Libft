@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:54:55 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/05 19:56:43 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:32:54 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		copy_len = size - 1;
 		if (src_len < copy_len)
 			copy_len = src_len;
-		memcpy(dst, src, copy_len);
+		ft_memcpy(dst, src, copy_len);
 		dst[copy_len] = '\0';
 	}
 	return (src_len);
