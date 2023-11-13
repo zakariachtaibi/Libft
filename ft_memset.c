@@ -24,16 +24,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-int main()
-{
-	int array[] = {1,2,3,4,5};
-	ft_memset(array,57,2 * sizeof(int));
-	ft_memset(array + 1,5,2 * sizeof(int));
-	int i = 0;
-	while (i < 5)
-	{
-		printf("%d\n",(unsigned char)array[i]);
-		i++;
-	}
-	return 0;
-}

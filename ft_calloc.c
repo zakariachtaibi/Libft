@@ -16,12 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*pt;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
 	pt = malloc(nmemb * size);
 	if (pt != NULL)
-	{
-		ft_memset(pt, 0, nmemb * size);
-	}
+		ft_bzero(pt, nmemb * size);
 	return (pt);
 }
