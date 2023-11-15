@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:09:15 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/06 21:14:48 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:06:25 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		return ;
 	while (s[i])
 	{
-		f(i,&s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }
