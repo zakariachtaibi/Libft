@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:34:25 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/16 00:40:24 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:36:45 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		return ;
 	while (lst)
 	{
-		if (lst->content)
-			f(lst->content);
+		f(lst->content);
 		lst = lst->next;
 	}
 }

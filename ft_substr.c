@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:14:31 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/06 01:24:22 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:38:59 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*result;
-	size_t	str_len;
+	char	*chaine;
+	size_t	length;
+	size_t	i;
 
-	if (!s)
+	length = ft_strlen(s);
+	i = 0;
+	if (s == NULL || start >= length)
+		return (ft_strdup(""));
+	if (len > (length - start))
+		len = length - start;
+	chaine = (char *)malloc((len) + 1);
+	if (!chaine)
 		return (NULL);
-	str_len = ft_strlen(s);
-	if (start > str_len)
-		start = str_len;
-	if (len > str_len - start)
-		len = str_len - start;
-	result = (char *)malloc(sizeof(char) * (len + 1));
-	if (result != NULL)
-		ft_strlcpy(result, s + start, len + 1);
-	return (result);
+	while ((i + start) < length && i < len)
+	{
+		chaine[i] = s[i + start];
+		i++;
+	}
+	chaine[i] = 0;
+	return (chaine);
 }

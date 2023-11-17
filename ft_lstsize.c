@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 15:07:22 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/13 15:23:06 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:35:45 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	count;
 
 	count = 0;
-	while (lst != NULL)
+	while (lst)
 	{
 		lst = lst->next;
 		count++;
