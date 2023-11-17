@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:18:47 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/13 15:19:02 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/17 23:11:12 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
-	*lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:38:03 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/12 17:22:08 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/17 23:10:53 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
 		return ;
-	if (lst->content != NULL)
-		del(lst->content);
+	(*del)(lst->content);
 	free(lst);
-	lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:48:31 by zchtaibi          #+#    #+#             */
-/*   Updated: 2023/11/17 17:38:33 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:46:39 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		ft_strlcpy(chaine, s1 + start, end - start + 1);
 	return (chaine);
 }
-
